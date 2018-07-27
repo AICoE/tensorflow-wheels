@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en-us" class="ie9 layout-pf layout-pf-fixed"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en-us" class="layout-pf">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AICoE's TensorFlow Artifacts</title>
+    <meta name="description" content="Red Hat's AICoE experiment to publish prebuild TensorFlow Python Wheels!">
+
+    <!-- PatternFly Styles -->
+    <link rel="stylesheet" href="node_modules/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet" href="node_modules/patternfly/dist/css/patternfly-additions.min.css">
+
+    <!-- jQuery -->
+    <script src="node_modules/patternfly/node_modules/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="node_modules/patternfly/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- C3, D3 - Charting Libraries -->
+    <script src="node_modules/patternfly/node_modules/c3/c3.min.js"></script>
+    <script src="node_modules/patternfly/node_modules/d3/d3.min.js"></script>
+
+    <!-- Datatables, jQuery Grid Component -->
+    <!-- Note: jquery.dataTables.js must occur in the html source before patternfly*.js.-->
+    <script src="node_modules/patternfly/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="node_modules/patternfly/node_modules/drmonty-datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="node_modules/patternfly/node_modules/datatables.net-colreorder/js/dataTables.colReorder.js"></script>
+
+    <!-- PatternFly Custom Componets -  Sidebar, Popovers and Datatables Customizations -->
+    <!-- Note: jquery.dataTables.js must occur in the html source before patternfly*.js.-->
+    <script src="node_modules/patternfly/node_modules/patternfly/dist/js/patternfly.min.js"></script>
+
+    <!-- Bootstrap Combobox -->
+    <script src="node_modules/patternfly/node_modules/patternfly-bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+    <!-- Bootstrap Date Picker -->
+    <script src="node_modules/patternfly/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Moment - required by Bootstrap Date Time Picker -->
+    <script src="node_modules/patternfly/node_modules/moment/min/moment.min.js"></script>
+
+    <!-- Bootstrap Date Time Picker - requires Moment -->
+    <script src="node_modules/patternfly/node_modules/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Bootstrap Select -->
+    <script src="node_modules/patternfly/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Bootstrap Switch -->
+    <script src="node_modules/patternfly/node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    <!-- Bootstrap Touchspin -->
+    <script src="node_modules/patternfly/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    <!-- Bootstrap Tree View -->
+    <script src="node_modules/patternfly/node_modules/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    <!-- Google Code Prettify - Syntax highlighting of code snippets -->
+    <script src="node_modules/patternfly/node_modules/google-code-prettify/bin/prettify.min.js"></script>
+
+    <!-- MatchHeight - Used to make sure dashboard cards are the same height -->
+    <script src="node_modules/patternfly/node_modules/jquery-match-height/jquery.matchHeight-min.js"></script>
+
+    <!-- Angular Application? You May Want to Consider Pulling Angular-PatternFly And Angular-UI Bootstrap instead of bootstrap.js -->
+    <!-- See https://github.com/patternfly/angular-patternfly for more information -->
+
+    <style>
+        .site-footer {
+            border-top: 1px solid #D5D5D5;
+            bottom: 0;
+            font-size: 10px;
+            left: 20px;
+            line-height: 15px;
+            padding-bottom: 28px;
+            padding-top: 28px;
+            position: relative;
+            z-index: 100;
+            width: calc(100% - 40px)
+        }
+        
+        .has-sidebar .site-footer {
+            left: 45px;
+            width: calc(100% - 25px - 40px)
+        }
+        
+        @media (min-width:992px) {
+            .has-sidebar .site-footer {
+                left: 260px;
+                width: calc(100% - 240px - 40px)
+            }
+        }
+        
+        .home .site-footer {
+            border-top: 0;
+            margin-top: 0
+        }
+        
+        .site-footer a,
+        .site-footer a:focus,
+        .site-footer a:hover {
+            color: #3bb1dc
+        }
+        
+        .site-footer #logo-redhat {
+            background: url(http://www.patternfly.org/assets/img/redhat.svg) no-repeat;
+            display: none;
+            float: left;
+            height: 34px;
+            margin: -3px 30px 0 0;
+            text-indent: -9999px;
+            width: 106px
+        }
+        
+        @media (min-width: 1200px) {
+            .site-footer #logo-redhat {
+                display: block
+            }
+        }
+        
+        .site-footer p {
+            font-size: 11px !important;
+            margin-bottom: 0
+        }
+        
+        .site-footer .social {
+            clear: left;
+            list-style: none;
+            margin: 15px 0 0;
+            padding: 0
+        }
+        
+        @media (min-width:992px) {
+            .site-footer .social {
+                margin-top: 3px;
+                text-align: right
+            }
+        }
+        
+        .home .about .row>div,
+        .home .jumbotron {
+            text-align: center
+        }
+        
+        .site-footer .social li {
+            display: inline-block
+        }
+        
+        .site-footer .social li+li {
+            margin-left: 10px
+        }
+        
+        .site-footer .social li a {
+            color: #363636;
+            font-size: 26px
+        }
+        
+        h1 {
+            font-weight: 300;
+            font-size: 24px
+        }
+    </style>
+</head>
+
+<body class="cards-pf">
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                AICoE's TensorFlow Artifacts
+            </a>
+        </div>
+    </nav>
+
+    <div class="container-fluid container-cards-pf" id="main">
+        <!-- Important:  if you need to nest additional .row within a .row.row-cards-pf, do *not* use .row-cards-pf on the nested .row  -->
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="card-pf">
+                    <div class="card-pf-body">
+                        <h1>What you will find here</h1>
+                        <p>You will find a set of Python Module indices containing native builds of TensorFlow artifacts for a variety of operating systems:
+                            <ul>
+                                <li>
+                                    <a href="https://docs.fedoraproject.org/fedora-project/project/fedora-overview.html">Fedora 28</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">Red Hat Enterprise Linux 7</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.centos.org/about/">CentOS 7</a>
+                                </li>
+                            </ul>
+                        </p>
+                        <p>The primary focus of our activities is to enable high performance TensorFlow application deployed on the
+                            <a href="https://www.openshift.org/">OpenShift Container Platform</a>.</p>
+                        <p>Building TensorFlow from source can give better performance than the official standard build. This is because the
+                            <blockquote cite="https://www.tensorflow.org/performance/performance_guide#building_and_installing_from_source">
+                                <p>default TensorFlow binaries target the broadest range of hardware to make TensorFlow accessible to everyone. If using CPUs for training or inference, it is recommended to compile TensorFlow with all of the optimizations
+                                    available for the CPU in use.</p>
+                                <footer>
+                                    <a href="https://www.tensorflow.org/performance/performance_guide#building_and_installing_from_source">Building and installing from source</a>
+                                </footer>
+                            </blockquote>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="card-pf">
+                    <div class="card-pf-body">
+                        <h1>How to use it</h1>
+                        <p>Using these wheels with your Python application is very simple, just use the directory we provide as a source in your Pipfile or requirements.txt.</p>
+                        <h2>Pipenv</h2>
+                        <p>Here is a simple example of a
+                            <code>Pipfile</code>.
+                            <pre>
+[[source]]
+url = "https://index-aicoe.a3c1.starter-us-west-1.openshiftapps.com/fedora28/1.9/jemalloc"
+verify_ssl = true
+name = "redhat-aicoe-experiments"
+
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[requires]
+python_version = "2.7"
+
+[packages]
+tensorflow = {version="==1.9.0rc0", index="redhat-aicoe-experiments"}
+
+[pipenv]
+allow_prereleases = true</pre>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="card-pf">
+                    <div class="card-pf-body">
+                        <h1>How we build them</h1>
+                        <p>To build the artifacts you can find here, we are using OpenShift. A build is triggered for each release of TensorFlow and will result in an optimized artifact published in the corresponding Python Module index on this site. For
+                            details on the build process you may have a look at https://github.com/thoth-station/tensorflow-build-s2i</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="card-pf">
+                    <div class="card-pf-body">
+                        <h1>Who we are</h1>
+                        <p>
+                            The Artificial Intelligence Center of Excellence (AICoE) is part of Red Hat's Office of the CTO. Our core mission is to:
+                            <ul>
+                                <li>Lead Red Hat on a path to fully embrace the AI transformation leveraging momentum and strengths from our existing product portfolio and unique Open Source philosophy
+                                </li>
+                                <li>In collaboration with the different product, service, and operations teams, we advance the application of state-of-the-art AI</li>
+                            </ul>
+                        </p>
+                        <p>As part of our mission we strive to provide a optimized developer experience on the OpenShift Container Platform. A part of this, are the artifacts you will finde here.</p>
+                        <p>Feel free to reach out to us via
+                            <a href="https://github.com/thoth-station" target="_blank">
+                                GitHub
+                            </a> or
+                            <a href="https://twitter.com/thothstation" target="_blank">
+                                Twitter
+                            </a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="card-pf">
+                <div class="card-pf-body">
+                    <h1>List of Wheels</h1>
+                    <section>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function() {
+            // matchHeight the contents of each .card-pf and then the .card-pf itself
+            $(".row-cards-pf > [class*='col'] > .card-pf .card-pf-title").matchHeight();
+            $(".row-cards-pf > [class*='col'] > .card-pf > .card-pf-body").matchHeight();
+            $(".row-cards-pf > [class*='col'] > .card-pf > .card-pf-footer").matchHeight();
+            $(".row-cards-pf > [class*='col'] > .card-pf").matchHeight();
+
+            // initialize tooltips
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+
+    <footer class="site-footer">
+        <div class="row">
+            <div class="col-md-9">
+                <p>
+                    <a href="http://www.redhat.com" id="logo-redhat" target="_blank">Red Hat</a> This is a
+                    <a href="http://www.redhat.com" target="_blank">Red Hat</a> sponsored project.
+                    <br> Except where otherwise noted, content on this site is licensed under a
+                    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"> Creative Commons Attribution 4.0 International license.</a>
+                </p>
+            </div>
+            <div class="col-md-3">
+                <ul class="social">
+                    <li>
+                        <a href="https://github.com/thoth-station" target="_blank">
+                            <span class="fa fa-github-square"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/thothstation" target="_blank">
+                            <span class="fa fa-twitter-square"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+
+</html>
