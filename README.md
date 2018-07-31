@@ -1,2 +1,2 @@
-# wheels
+# tensorflow-wheels
 TensorFlow Optimized Wheels
