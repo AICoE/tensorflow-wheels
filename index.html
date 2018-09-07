@@ -11,15 +11,18 @@
     <title>AICoE's TensorFlow Artifacts</title>
     <meta name="description" content="Red Hat's AICoE experiment to publish prebuild TensorFlow Python Wheels!">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123174547-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123174547-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-123174547-1');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-123174547-1');
+    </script>
 
     <!-- PatternFly Styles -->
     <link rel="stylesheet" href="node_modules/patternfly/dist/css/patternfly.min.css">
@@ -200,10 +203,12 @@
                         <p>You will find a set of Python Module indices containing native builds of TensorFlow artifacts for a variety of operating systems:
                             <ul>
                                 <li>
-                                    <a href="https://docs.fedoraproject.org/fedora-project/project/fedora-overview.html">Fedora 28</a>
+                                    <a href="https://docs.fedoraproject.org/fedora-project/project/fedora-overview.html">Fedora
+                                        28</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">Red Hat Enterprise Linux 7</a>
+                                    <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">Red
+                                        Hat Enterprise Linux 7</a>
                                 </li>
                                 <li>
                                     <a href="https://www.centos.org/about/">CentOS 7</a>
@@ -217,7 +222,8 @@
                                 <p>default TensorFlow binaries target the broadest range of hardware to make TensorFlow accessible to everyone. If using CPUs for training or inference, it is recommended to compile TensorFlow with all of the optimizations
                                     available for the CPU in use.</p>
                                 <footer>
-                                    <a href="https://www.tensorflow.org/performance/performance_guide#building_and_installing_from_source">Building and installing from source</a>
+                                    <a href="https://www.tensorflow.org/performance/performance_guide#building_and_installing_from_source">Building
+                                        and installing from source</a>
                                 </footer>
                             </blockquote>
                         </p>
@@ -244,7 +250,7 @@ verify_ssl = true
 name = "pypi"
 
 [requires]
-python_version = "2.7"
+python_version = "3.6"
 
 [packages]
 tensorflow = {version="==1.9.0", index="redhat-aicoe-experiments"}
@@ -260,7 +266,9 @@ allow_prereleases = true</pre>
                     <div class="card-pf-body">
                         <h1>How we build them</h1>
                         <p>To build the artifacts you can find here, we are using OpenShift. A build is triggered for each release of TensorFlow and will result in an optimized artifact published in the corresponding Python Module index on this site. For
-                            details on the build process you may have a look at https://github.com/thoth-station/tensorflow-build-s2i</p>
+                            details on the build process you may have a look at
+                            <a href="https://github.com/thoth-station/tensorflow-build-s2i">our build tool chain</a>.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -320,7 +328,8 @@ allow_prereleases = true</pre>
                     <a href="http://www.redhat.com" id="logo-redhat" target="_blank">Red Hat</a> This is a
                     <a href="http://www.redhat.com" target="_blank">Red Hat</a> sponsored project.
                     <br> Except where otherwise noted, content on this site is licensed under a
-                    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"> Creative Commons Attribution 4.0 International license.</a>
+                    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"> Creative Commons
+                        Attribution 4.0 International license.</a>
                 </p>
             </div>
             <div class="col-md-3">
