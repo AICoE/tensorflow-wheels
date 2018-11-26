@@ -233,17 +233,6 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="card-pf">
                     <div class="card-pf-body">
-                        <h1>How we build them</h1>
-                        <p>To build the artifacts you can find here, we are using OpenShift. A build is triggered for each release of TensorFlow and will result in an optimized artifact published in the corresponding Python Module index on this site. For
-                            details on the build process you may have a look at
-                            <a href="https://github.com/thoth-station/tensorflow-build-s2i">our build tool chain</a>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="card-pf">
-                    <div class="card-pf-body">
                         <h1>Who we are</h1>
                         <p>
                             The Artificial Intelligence Center of Excellence (AICoE) is part of Red Hat's Office of the CTO. Our core mission is to:
@@ -265,25 +254,36 @@
                 </div>
             </div>
         </div>
-
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="card-pf">
-                <div class="card-pf-body">
-                    <h1>Python Simple Index</h1>
-                    <section><a href="index/">AICoE's TensorFlow</a>
-                    </section>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="card-pf">
+                    <div class="card-pf-body">
+                        <h1>How we build them</h1>
+                        <p>To build the artifacts you can find here, we are using OpenShift. A build is triggered for each release of TensorFlow and will result in an optimized artifact published in the corresponding Python Module index on this site. For
+                            details on the build process you may have a look at
+                            <a href="https://github.com/thoth-station/tensorflow-build-s2i">our build tool chain</a>.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="card-pf">
-                <div class="card-pf-body">
-                    <h1>How to use it</h1>
-                    <p>Using these wheels with your Python application is very simple, just use the directory we provide as a source in your Pipfile or requirements.txt.</p>
-                    <h2>Pipenv</h2>
-                    <p>Here is a simple example of a
-                        <code>Pipfile</code>.
-                        <pre>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="card-pf">
+                    <div class="card-pf-body">
+                        <h1>Python Simple Index</h1>
+                        <section><a href="index/">AICoE's TensorFlow</a>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="card-pf">
+                    <div class="card-pf-body">
+                        <h1>How to use it</h1>
+                        <p>Using these wheels with your Python application is very simple, just use the directory we provide as a source in your Pipfile or requirements.txt.</p>
+                        <h2>Pipenv</h2>
+                        <p>Here is a simple example of a
+                            <code>Pipfile</code>.
+                            <pre>
                     [[source]]
                     url = "https://index-aicoe.a3c1.starter-us-west-1.openshiftapps.com/fedora28/1.9/jemalloc/simple"
                     verify_ssl = true
@@ -302,7 +302,8 @@
                     
                     [pipenv]
                     allow_prereleases = true</pre>
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
