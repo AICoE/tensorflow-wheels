@@ -233,37 +233,6 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="card-pf">
                     <div class="card-pf-body">
-                        <h1>How to use it</h1>
-                        <p>Using these wheels with your Python application is very simple, just use the directory we provide as a source in your Pipfile or requirements.txt.</p>
-                        <h2>Pipenv</h2>
-                        <p>Here is a simple example of a
-                            <code>Pipfile</code>.
-                            <pre>
-[[source]]
-url = "https://index-aicoe.a3c1.starter-us-west-1.openshiftapps.com/fedora28/1.9/jemalloc/simple"
-verify_ssl = true
-name = "redhat-aicoe-experiments"
-
-[[source]]
-url = "https://pypi.python.org/simple"
-verify_ssl = true
-name = "pypi"
-
-[requires]
-python_version = "3.6"
-
-[packages]
-tensorflow = {version="==1.9.0", index="redhat-aicoe-experiments"}
-
-[pipenv]
-allow_prereleases = true</pre>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="card-pf">
-                    <div class="card-pf-body">
                         <h1>How we build them</h1>
                         <p>To build the artifacts you can find here, we are using OpenShift. A build is triggered for each release of TensorFlow and will result in an optimized artifact published in the corresponding Python Module index on this site. For
                             details on the build process you may have a look at
@@ -300,9 +269,40 @@ allow_prereleases = true</pre>
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="card-pf">
                 <div class="card-pf-body">
-                    <h1>List of Wheels</h1>
-                    <section>
+                    <h1>Python Simple Index</h1>
+                    <section><a href="index/">AICoE's TensorFlow</a>
                     </section>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="card-pf">
+                <div class="card-pf-body">
+                    <h1>How to use it</h1>
+                    <p>Using these wheels with your Python application is very simple, just use the directory we provide as a source in your Pipfile or requirements.txt.</p>
+                    <h2>Pipenv</h2>
+                    <p>Here is a simple example of a
+                        <code>Pipfile</code>.
+                        <pre>
+                    [[source]]
+                    url = "https://index-aicoe.a3c1.starter-us-west-1.openshiftapps.com/fedora28/1.9/jemalloc/simple"
+                    verify_ssl = true
+                    name = "redhat-aicoe-experiments"
+                    
+                    [[source]]
+                    url = "https://pypi.python.org/simple"
+                    verify_ssl = true
+                    name = "pypi"
+                    
+                    [requires]
+                    python_version = "3.6"
+                    
+                    [packages]
+                    tensorflow = {version="==1.9.0", index="redhat-aicoe-experiments"}
+                    
+                    [pipenv]
+                    allow_prereleases = true</pre>
+                    </p>
                 </div>
             </div>
         </div>
