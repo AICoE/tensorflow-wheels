@@ -94,30 +94,30 @@
             z-index: 100;
             width: calc(100% - 40px)
         }
-        
+
         .has-sidebar .site-footer {
             left: 45px;
             width: calc(100% - 25px - 40px)
         }
-        
+
         @media (min-width:992px) {
             .has-sidebar .site-footer {
                 left: 260px;
                 width: calc(100% - 240px - 40px)
             }
         }
-        
+
         .home .site-footer {
             border-top: 0;
             margin-top: 0
         }
-        
+
         .site-footer a,
         .site-footer a:focus,
         .site-footer a:hover {
             color: #3bb1dc
         }
-        
+
         .site-footer #logo-redhat {
             background: url(http://www.patternfly.org/assets/img/redhat.svg) no-repeat;
             display: none;
@@ -127,50 +127,50 @@
             text-indent: -9999px;
             width: 106px
         }
-        
+
         @media (min-width: 1200px) {
             .site-footer #logo-redhat {
                 display: block
             }
         }
-        
+
         .site-footer p {
             font-size: 11px !important;
             margin-bottom: 0
         }
-        
+
         .site-footer .social {
             clear: left;
             list-style: none;
             margin: 15px 0 0;
             padding: 0
         }
-        
+
         @media (min-width:992px) {
             .site-footer .social {
                 margin-top: 3px;
                 text-align: right
             }
         }
-        
+
         .home .about .row>div,
         .home .jumbotron {
             text-align: center
         }
-        
+
         .site-footer .social li {
             display: inline-block
         }
-        
+
         .site-footer .social li+li {
             margin-left: 10px
         }
-        
+
         .site-footer .social li a {
             color: #363636;
             font-size: 26px
         }
-        
+
         h1 {
             font-weight: 300;
             font-size: 24px
@@ -203,8 +203,8 @@
                         <p>You will find a set of Python Module indices containing native builds of TensorFlow artifacts for a variety of operating systems:
                             <ul>
                                 <li>
-                                    <a href="https://docs.fedoraproject.org/fedora-project/project/fedora-overview.html">Fedora
-                                        28</a>
+                                    <a href="https://docs.fedoraproject.org/en-US/docs/">Fedora
+                                        29</a>
                                 </li>
                                 <li>
                                     <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">Red
@@ -284,24 +284,24 @@
                         <p>Here is a simple example of a
                             <code>Pipfile</code>.
                             <pre>
-                    [[source]]
-                    url ="https://tensorflow.pypi.thoth-station.ninja/index/fedora28/jemalloc/simple/"
-                    verify_ssl = true
-                    name = "redhat-aicoe-experiments"
-                    
-                    [[source]]
-                    url = "https://pypi.python.org/simple"
-                    verify_ssl = true
-                    name = "pypi"
-                    
-                    [requires]
-                    python_version = "3.6"
-                    
-                    [packages]
-                    tensorflow = {version="==1.12.0", index="redhat-aicoe-experiments"}
-                    
-                    [pipenv]
-                    allow_prereleases = true</pre>
+[[source]]
+url ="https://tensorflow.pypi.thoth-station.ninja/index/fedora29/jemalloc/simple/"
+verify_ssl = true
+name = "redhat-aicoe-experiments"
+
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[requires]
+python_version = "3.6"
+
+[packages]
+tensorflow = {version="==1.13.1", index="redhat-aicoe-experiments"}
+
+[pipenv]
+allow_prereleases = true</pre>
                         </p>
                     </div>
                 </div>
