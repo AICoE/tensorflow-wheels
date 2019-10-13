@@ -200,21 +200,6 @@
                 <div class="card-pf">
                     <div class="card-pf-body">
                         <h1>What you will find here</h1>
-                        <p>You will find a set of Python Module indices containing native builds of TensorFlow artifacts for a variety of operating systems:
-                            <ul>
-                                <li>
-                                    <a href="https://docs.fedoraproject.org/en-US/docs/">Fedora
-                                        29</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux">Red
-                                        Hat Enterprise Linux 7</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.centos.org/about/">CentOS 7</a>
-                                </li>
-                            </ul>
-                        </p>
                         <p>The primary focus of our activities is to enable high performance TensorFlow application deployed on the
                             <a href="https://www.openshift.org/">OpenShift Container Platform</a>.</p>
                         <p>Building TensorFlow from source can give better performance than the official standard build. This is because the
@@ -285,7 +270,7 @@
                             <code>Pipfile</code>.
                             <pre>
 [[source]]
-url ="https://tensorflow.pypi.thoth-station.ninja/index/os/fedora/29/jemalloc/simple/"
+url ="https://tensorflow.pypi.thoth-station.ninja/index/manylinux2010/AVX2/simple/"
 verify_ssl = true
 name = "redhat-aicoe-experiments"
 
@@ -298,7 +283,7 @@ name = "pypi"
 python_version = "3.6"
 
 [packages]
-tensorflow = {version="==1.13.1", index="redhat-aicoe-experiments"}
+tensorflow = {version="==1.13.2", index="redhat-aicoe-experiments"}
 
 [pipenv]
 allow_prereleases = true</pre>
